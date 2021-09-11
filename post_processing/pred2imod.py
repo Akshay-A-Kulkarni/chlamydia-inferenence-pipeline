@@ -138,12 +138,17 @@ if __name__ == '__main__':
                         '--label',
                         type=int,
                         nargs='*',
-                        help='use imodauto on a specific labels in the input')
+                        help='''
+                        if you have input with multiple type of objects with their IDs as pixel values
+                        this flag allows you to operate on 1 or more of them at a time (default is all)
+                        i.e
+                        use imodauto on a specific labels in the input''')
     
     parser.add_argument('-j',
                         '--join-mods',
                         action='store_true',
-                        help='enable verbose error outputs')
+                        help='''this allows you to specify whether you want a single .mod file with all the contours from all the
+                        distinct labels in the input or separate mod file for each object ID ( default is True)''')
 
     parser.add_argument('-s',
                         '--spacing',
